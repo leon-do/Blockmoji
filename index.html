@@ -16,7 +16,7 @@
      web3.eth.sendTransaction({
       from: web3.eth.defaultAccount,
       to: web3.eth.defaultAccount,
-      data: $('#textArea').val()
+      data: $('#textArea').val() // what matters
      }, (err, tx) => {
        console.log(err)
        console.log(tx)
