@@ -1,35 +1,28 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <title></title>
-</head>
-
 <body>
-
   <textarea id="textArea"> </textarea>
   <button onClick='sendMsg()'>SEND</button>
   <pre id='txTxt'></pre>
-
 </body>
+  
 <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script type="text/javascript">
 
+<script type="text/javascript">
   function sendMsg() {
-    const text = $('#textArea').val()
     // https://github.com/ethereum/wiki/wiki/JavaScript-API#web3ethsendtransaction
      web3.eth.sendTransaction({
       from: web3.eth.defaultAccount,
       to: web3.eth.defaultAccount,
-      data: text
+      data: $('#textArea').val()
      }, (err, tx) => {
        console.log(err)
        console.log(tx)
        $('#txTxt').text(tx)
      })
   }
-
 </script>
 
 </html>
